@@ -7,17 +7,58 @@
 
     <!-- CSS External -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Tailwind CSS CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body class="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-700 p-4 md:p-10 font-sans">
     <!-- Header Content -->
-    <header></header>
+    <header class="bg-white/15 backdrop-blur-lg border border-white/50 rounded-4xl p-3 shadow-4xl mb-5">
+        <h1 class="text-white font-bold text-3xl">Todo List Website - Ardiansyah</h1>   
+    </header>
     
     <!-- Main Content -->
-    <main></main>
+    <main>
+        <!-- Form Section -->
+        <section>
+            <!-- Todo Input -->
+            <form>
+                <input class="text-white bg-white/15 backdrop-blur-lg border border-white/50 rounded-4xl p-3 shadow-4xl mb-5" type="text" id="todo-input" placeholder="Enter a new todo item">
+                
+                <!-- Date Input -->
+                 <input class="text-white bg-white/15 backdrop-blur-lg border border-white/50 rounded-4xl p-3 shadow-4xl mb-5" type="date" id="todo-date" placeholder="Enter due date">
+            </form>
+
+            <!-- Add Button -->
+             <button onclick="addTodo()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button">Add Todo</button>
+        </section>
+
+        <!-- Action Section -->
+         <section class="flex pt-2 justify-between">
+            <!-- Clear All Button -->
+             <button onclick="removeAllTodo()" class="border rounded p-2 bg-red-500 text-white">Clear All Todos</button>
+
+             <!-- Filter Option -->
+              <button onclick="filterTodo()" class="border rounded p-2 bg-blue-500 text-white">Filter Todos</button>
+         </section>
+
+        <!-- Todo List Section -->
+         <section class="pt-2"></section>
+            <header>
+                <h1 class="text-white text-2xl font-semibold">List of Todos</h1>
+            </header>
+
+            <ul class="text-white pt-2" id="todo-list">
+                <!-- Todo items will be dynamically added here -->
+                 <li>No todos available</li>
+            </ul>
+    </main>
 
     <!-- Footer Content -->
-    <footer></footer>
+    <footer>
+        <p class="text-white text-center pt-4">© 2026 Ardiansyah's Todo List</p>
+    </footer>
 
     <!-- JS External -->
     <script src="js/script.js"></script>
